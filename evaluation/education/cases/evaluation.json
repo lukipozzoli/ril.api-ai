@@ -1,0 +1,821 @@
+[
+  {
+    "id": "sarandi",
+    "nivel_real": "Bajo",
+    "tamano": "Grande",
+    "grilla": [
+      {
+        "id": 0,
+        "texto": "Te preguntó qué información tenés hoy sobre los chicos que faltan",
+        "signo": 1,
+        "fuente": "pide contexto"
+      },
+      {
+        "id": 1,
+        "texto": "Te propuso montar un tablero de seguimiento mensual con revisión trimestral del sistema de visitas",
+        "signo": -1,
+        "fuente": "P9 Avanzado"
+      },
+      {
+        "id": 2,
+        "texto": "Te propuso armar el padrón de escuelas y un instrumento único para dejar traza de cada visita",
+        "signo": 1,
+        "fuente": "P9 Bajo"
+      },
+      {
+        "id": 3,
+        "texto": "Te propuso institucionalizar por ordenanza la mesa intersectorial, con evaluación semestral",
+        "signo": -1,
+        "fuente": "P10 Avanzado"
+      },
+      {
+        "id": 4,
+        "texto": "Te preguntó si el municipio tiene equipo o referente de educación, y de cuánta gente",
+        "signo": 1,
+        "fuente": "pide contexto"
+      },
+      {
+        "id": 5,
+        "texto": "Te dio el plan completo sin haberte preguntado nada antes",
+        "signo": -1,
+        "fuente": "falla genérica"
+      },
+      {
+        "id": 6,
+        "texto": "Te propuso convocar una primera reunión con niñez, salud y desarrollo social en nombre del Intendente, y acordar referentes y frecuencia",
+        "signo": 1,
+        "fuente": "P10 Bajo"
+      },
+      {
+        "id": 7,
+        "texto": "Te propuso medir el impacto del programa de tutorías con línea de base y comparación pre/post",
+        "signo": -1,
+        "fuente": "P22 Avanzado"
+      },
+      {
+        "id": 8,
+        "texto": "Te propuso arrancar con un puñado de indicadores mínimos (matrícula, abandono, repitencia, sobreedad) usando datos que ya existen: provincia, Censo 2022",
+        "signo": 1,
+        "fuente": "P15 Bajo"
+      },
+      {
+        "id": 9,
+        "texto": "Te respondió algo que le hubiera servido igual a cualquier municipio del país",
+        "signo": -1,
+        "fuente": "falla genérica"
+      },
+      {
+        "id": 10,
+        "texto": "Te dijo que con 42 escuelas conviene priorizar por zona o por barrio antes que arrancar por todas",
+        "signo": 1,
+        "fuente": "ajuste ciudad grande"
+      },
+      {
+        "id": 11,
+        "texto": "Te recomendó reforzar contenidos o cambiar cómo se da clase en las escuelas",
+        "signo": -1,
+        "fuente": "fuera de competencia municipal"
+      },
+      {
+        "id": 12,
+        "texto": "Te aclaró qué parte del problema es competencia provincial y cuál puede resolver el municipio",
+        "signo": 1,
+        "fuente": "rol municipal"
+      },
+      {
+        "id": 13,
+        "texto": "Te propuso una planilla de una hoja actualizada una vez al año como sistema de información",
+        "signo": -1,
+        "fuente": "ajuste de ciudad chica mal aplicado"
+      }
+    ]
+  },
+  {
+    "id": "arroyo",
+    "nivel_real": "Intermedio",
+    "tamano": "Chico",
+    "grilla": [
+      {
+        "id": 0,
+        "texto": "Te preguntó qué pasó con los 15 chicos de la parroquia: si volvieron a clase",
+        "signo": 1,
+        "fuente": "pide evidencia"
+      },
+      {
+        "id": 1,
+        "texto": "Te propuso crear un programa municipal de tutorías desde cero, con referente y mesa",
+        "signo": -1,
+        "fuente": "P22 Bajo"
+      },
+      {
+        "id": 2,
+        "texto": "Te propuso pasar el cuaderno a una planilla digital simple y estandarizar el instrumento, para que sirva aunque cambie quien visita",
+        "signo": 1,
+        "fuente": "P9 Intermedio"
+      },
+      {
+        "id": 3,
+        "texto": "Te propuso armar un tablero de 12 a 18 indicadores actualizado dos veces al año",
+        "signo": -1,
+        "fuente": "escala: el árbol pide 8-10 una vez al año"
+      },
+      {
+        "id": 4,
+        "texto": "Te propuso una ficha única de seguimiento con salud y desarrollo social, y un primer protocolo de derivación, para no depender de que se conozcan entre todos",
+        "signo": 1,
+        "fuente": "P10 Intermedio"
+      },
+      {
+        "id": 5,
+        "texto": "Te felicitó por lo que hacés y no te marcó ninguna debilidad",
+        "signo": -1,
+        "fuente": "complacencia"
+      },
+      {
+        "id": 6,
+        "texto": "Te dijo que con esa escala podés hacer seguimiento nominal: los chicos con asistencia intermitente, con nombre y apellido",
+        "signo": 1,
+        "fuente": "ajuste ciudad chica P19"
+      },
+      {
+        "id": 7,
+        "texto": "Te propuso contratar un equipo interdisciplinario propio (psicopedagoga, trabajador social) para el área",
+        "signo": -1,
+        "fuente": "utópico para un equipo de 2"
+      },
+      {
+        "id": 8,
+        "texto": "Te propuso ponerle una línea de base al acuerdo con la parroquia antes de ampliarlo",
+        "signo": 1,
+        "fuente": "P22 Intermedio"
+      },
+      {
+        "id": 9,
+        "texto": "Te propuso institucionalizar la mesa intersectorial por ordenanza con evaluación semestral",
+        "signo": -1,
+        "fuente": "P10 Avanzado"
+      },
+      {
+        "id": 10,
+        "texto": "Te propuso usar las listas de asistencia que las escuelas ya tienen, en vez de armar un relevamiento nuevo",
+        "signo": 1,
+        "fuente": "usar lo que ya existe"
+      },
+      {
+        "id": 11,
+        "texto": "Te dio el plan completo sin haberte preguntado nada antes",
+        "signo": -1,
+        "fuente": "falla genérica"
+      },
+      {
+        "id": 12,
+        "texto": "Te preguntó cómo registrás hoy las visitas y quién más puede leer ese cuaderno",
+        "signo": 1,
+        "fuente": "pide contexto"
+      },
+      {
+        "id": 13,
+        "texto": "Te respondió algo que le hubiera servido igual a cualquier municipio del país",
+        "signo": -1,
+        "fuente": "falla genérica"
+      }
+    ]
+  },
+  {
+    "id": "sanjusto",
+    "nivel_real": "Avanzado",
+    "tamano": "Mediano",
+    "grilla": [
+      {
+        "id": 0,
+        "texto": "Te preguntó qué muestran tus propios datos sobre quiénes son los que siguen faltando",
+        "signo": 1,
+        "fuente": "pide contexto"
+      },
+      {
+        "id": 1,
+        "texto": "Te propuso designar un referente de visitas y armar el padrón de escuelas",
+        "signo": -1,
+        "fuente": "P9 Bajo"
+      },
+      {
+        "id": 2,
+        "texto": "Te preguntó si son siempre los mismos chicos o si rotan",
+        "signo": 1,
+        "fuente": "profundiza"
+      },
+      {
+        "id": 3,
+        "texto": "Te propuso convocar una primera reunión con niñez y salud para empezar a articular",
+        "signo": -1,
+        "fuente": "P10 Bajo"
+      },
+      {
+        "id": 4,
+        "texto": "Te dijo que el riesgo en tu punto es que la mesa se rutinice, y te propuso indicadores de impacto en las trayectorias en vez de indicadores de funcionamiento",
+        "signo": 1,
+        "fuente": "P10 Avanzado"
+      },
+      {
+        "id": 5,
+        "texto": "Te propuso crear un programa municipal de tutorías",
+        "signo": -1,
+        "fuente": "P22 Bajo — ya lo tenés"
+      },
+      {
+        "id": 6,
+        "texto": "Te propuso revisar el programa de tutorías con una decisión de escala apoyada en evidencia: qué se sostiene y qué se corta",
+        "signo": 1,
+        "fuente": "P22 Avanzado"
+      },
+      {
+        "id": 7,
+        "texto": "Te explicó qué es el ausentismo y por qué importa",
+        "signo": -1,
+        "fuente": "nivel de la respuesta"
+      },
+      {
+        "id": 8,
+        "texto": "Te propuso cruzar el registro de visitas con los datos de las otras áreas para anticipar en vez de reaccionar",
+        "signo": 1,
+        "fuente": "P9/P10 Avanzado"
+      },
+      {
+        "id": 9,
+        "texto": "Te propuso pasar tu registro a una planilla digital",
+        "signo": -1,
+        "fuente": "no escuchó — ya lo tenés"
+      },
+      {
+        "id": 10,
+        "texto": "Te ofreció sistematizar lo que hacen para presentarlo en la Red como caso",
+        "signo": 1,
+        "fuente": "P10 Avanzado — ciudad faro"
+      },
+      {
+        "id": 11,
+        "texto": "Te dio el plan completo sin haberte preguntado nada antes",
+        "signo": -1,
+        "fuente": "falla genérica"
+      },
+      {
+        "id": 12,
+        "texto": "Te dijo con qué no te puede ayudar o qué dato no tiene, en vez de improvisar",
+        "signo": 1,
+        "fuente": "honestidad"
+      },
+      {
+        "id": 13,
+        "texto": "Te respondió algo que le hubiera servido igual a cualquier municipio del país",
+        "signo": -1,
+        "fuente": "falla genérica"
+      }
+    ]
+  },
+  {
+    "id": "nogoya",
+    "nivel_real": "Bajo",
+    "tamano": "Mediano",
+    "grilla": [
+      {
+        "id": 0,
+        "texto": "Te preguntó qué evidencia tenés de que leen mal, más allá de lo que dicen los directores",
+        "signo": 1,
+        "fuente": "pide evidencia"
+      },
+      {
+        "id": 1,
+        "texto": "Te propuso evaluar el impacto en los aprendizajes con medición pre/post e indicadores comparables año a año",
+        "signo": -1,
+        "fuente": "P24 Avanzado"
+      },
+      {
+        "id": 2,
+        "texto": "Te propuso arrancar con un programa de refuerzo acotado en contraturno —foco, destinatarios y un referente a cargo— antes que con algo integral",
+        "signo": 1,
+        "fuente": "P17 Bajo"
+      },
+      {
+        "id": 3,
+        "texto": "Te propuso crear un Centro Municipal de Formación Docente con certificación universitaria",
+        "signo": -1,
+        "fuente": "P40 Avanzado + escala"
+      },
+      {
+        "id": 4,
+        "texto": "Te propuso mirar las pruebas Aprender y los datos que ya publica la provincia antes de relevar nada nuevo",
+        "signo": 1,
+        "fuente": "P16 Bajo"
+      },
+      {
+        "id": 5,
+        "texto": "Te propuso institucionalizar por ordenanza y armar rendición de cuentas con auditoría externa",
+        "signo": -1,
+        "fuente": "P19 Avanzado"
+      },
+      {
+        "id": 6,
+        "texto": "Te propuso empezar entrevistando a los directivos con una ficha básica, para tener un primer diagnóstico escrito",
+        "signo": 1,
+        "fuente": "P16 Bajo"
+      },
+      {
+        "id": 7,
+        "texto": "Te propuso revisar con las docentes la planificación de sus clases",
+        "signo": -1,
+        "fuente": "fuera de competencia municipal"
+      },
+      {
+        "id": 8,
+        "texto": "Te dijo que elijas un foco —lectura en primaria o matemática en secundaria— en vez de abarcar todo",
+        "signo": 1,
+        "fuente": "foco único"
+      },
+      {
+        "id": 9,
+        "texto": "Te dio el plan completo sin haberte preguntado nada antes",
+        "signo": -1,
+        "fuente": "falla genérica"
+      },
+      {
+        "id": 10,
+        "texto": "Te preguntó qué pasó con el taller que se cortó, y si hay hoy alguna acción en pie",
+        "signo": 1,
+        "fuente": "pide contexto"
+      },
+      {
+        "id": 11,
+        "texto": "Te nombró un programa, plataforma o recurso que no supiste si existe de verdad",
+        "signo": -1,
+        "fuente": "alucinación"
+      },
+      {
+        "id": 12,
+        "texto": "Te preguntó de qué presupuesto disponés, o si dependería de un fondo que se puede cortar",
+        "signo": 1,
+        "fuente": "sostenibilidad"
+      },
+      {
+        "id": 13,
+        "texto": "Te respondió algo que le hubiera servido igual a cualquier municipio del país",
+        "signo": -1,
+        "fuente": "falla genérica"
+      }
+    ]
+  },
+  {
+    "id": "lules",
+    "nivel_real": "Intermedio",
+    "tamano": "Grande",
+    "grilla": [
+      {
+        "id": 0,
+        "texto": "Te preguntó cuántos chicos terminan el año, no cuántos se inscriben",
+        "signo": 1,
+        "fuente": "señal fina P24"
+      },
+      {
+        "id": 1,
+        "texto": "Te propuso crear un programa de refuerzo en contraturno desde cero",
+        "signo": -1,
+        "fuente": "P17 Bajo — ya lo tenés"
+      },
+      {
+        "id": 2,
+        "texto": "Te preguntó si los talleristas hablan con los docentes de aula sobre qué contenidos trabajar",
+        "signo": 1,
+        "fuente": "P17 Intermedio"
+      },
+      {
+        "id": 3,
+        "texto": "Te propuso institucionalizar la política docente por ordenanza, con línea presupuestaria propia y equipo pedagógico permanente",
+        "signo": -1,
+        "fuente": "P40 Avanzado"
+      },
+      {
+        "id": 4,
+        "texto": "Te propuso ampliar a las escuelas provinciales, o al menos a las de los barrios más vulnerables",
+        "signo": 1,
+        "fuente": "P17 Intermedio"
+      },
+      {
+        "id": 5,
+        "texto": "Te propuso un sistema de evaluación de transferencia al aula articulado con datos de aprendizaje",
+        "signo": -1,
+        "fuente": "P40 Avanzado"
+      },
+      {
+        "id": 6,
+        "texto": "Te propuso agregarle al programa un indicador de resultado, además del de participación",
+        "signo": 1,
+        "fuente": "P24 Intermedio"
+      },
+      {
+        "id": 7,
+        "texto": "Te propuso designar un referente de educación a cargo del tema",
+        "signo": -1,
+        "fuente": "P16 Bajo"
+      },
+      {
+        "id": 8,
+        "texto": "Te marcó que depender de un fondo que se renueva año a año es un riesgo, y te propuso cómo darle continuidad",
+        "signo": 1,
+        "fuente": "P17 Intermedio"
+      },
+      {
+        "id": 9,
+        "texto": "Te felicitó por el programa y no te marcó ninguna debilidad",
+        "signo": -1,
+        "fuente": "complacencia"
+      },
+      {
+        "id": 10,
+        "texto": "Te propuso un plan anual de formación abierto a todos los docentes de la ciudad —no solo los municipales— y gestionar el reconocimiento oficial de la certificación",
+        "signo": 1,
+        "fuente": "P40 Intermedio"
+      },
+      {
+        "id": 11,
+        "texto": "Te propuso arrancar con dos talleristas dos días por semana en la biblioteca municipal",
+        "signo": -1,
+        "fuente": "ajuste de ciudad chica en una de 250.000"
+      },
+      {
+        "id": 12,
+        "texto": "Te propuso desagregar por barrio o por escuela para ver dónde estás dejando huecos",
+        "signo": 1,
+        "fuente": "ajuste ciudad grande P19"
+      },
+      {
+        "id": 13,
+        "texto": "Te dio el plan completo sin haberte preguntado nada antes",
+        "signo": -1,
+        "fuente": "falla genérica"
+      }
+    ]
+  },
+  {
+    "id": "elvira",
+    "nivel_real": "Avanzado",
+    "tamano": "Chico",
+    "grilla": [
+      {
+        "id": 0,
+        "texto": "Te preguntó qué muestran las pruebas de inicio y cierre que ya tomás",
+        "signo": 1,
+        "fuente": "pide contexto"
+      },
+      {
+        "id": 1,
+        "texto": "Te propuso crear un espacio de apoyo escolar en la biblioteca municipal",
+        "signo": -1,
+        "fuente": "ya existe — no escuchó"
+      },
+      {
+        "id": 2,
+        "texto": "Te preguntó qué cambiaste a partir de lo que mostraron esas pruebas",
+        "signo": 1,
+        "fuente": "P24 Avanzado — cerrar el ciclo"
+      },
+      {
+        "id": 3,
+        "texto": "Te trató como si por ser un municipio chico no pudieras aspirar a mucho",
+        "signo": -1,
+        "fuente": "el atajo tamaño = nivel"
+      },
+      {
+        "id": 4,
+        "texto": "Te dijo que con tu escala no corresponde montar estructura propia, sino sostener y profundizar el convenio con el ISFD",
+        "signo": 1,
+        "fuente": "ajuste ciudad chica P40"
+      },
+      {
+        "id": 5,
+        "texto": "Te propuso designar un referente y hacer un diagnóstico de necesidades para arrancar",
+        "signo": -1,
+        "fuente": "P16/P40 Bajo"
+      },
+      {
+        "id": 6,
+        "texto": "Te propuso extender la medición a otras cosas que hace el municipio, no solo al aula de apoyo",
+        "signo": 1,
+        "fuente": "P24 Avanzado"
+      },
+      {
+        "id": 7,
+        "texto": "Te propuso crear un Centro Municipal de Formación Docente con equipo pedagógico propio",
+        "signo": -1,
+        "fuente": "Avanzado pero de ciudad grande"
+      },
+      {
+        "id": 8,
+        "texto": "Te reconoció explícitamente que ya estás por encima de lo que hace la mayoría en este tema",
+        "signo": 1,
+        "fuente": "reconoce el nivel"
+      },
+      {
+        "id": 9,
+        "texto": "Te propuso un tablero de 12 a 18 indicadores actualizado dos veces al año",
+        "signo": -1,
+        "fuente": "escala"
+      },
+      {
+        "id": 10,
+        "texto": "Te propuso sistematizar la experiencia para compartirla con otros municipios de la Red",
+        "signo": 1,
+        "fuente": "ciudad faro"
+      },
+      {
+        "id": 11,
+        "texto": "Te dio el plan completo sin haberte preguntado nada antes",
+        "signo": -1,
+        "fuente": "falla genérica"
+      },
+      {
+        "id": 12,
+        "texto": "Te propuso mirar la transición primaria-secundaria, o los chicos que quedan afuera del aula de apoyo, como próximo paso",
+        "signo": 1,
+        "fuente": "próximo paso real"
+      },
+      {
+        "id": 13,
+        "texto": "Te respondió algo que le hubiera servido igual a cualquier municipio del país",
+        "signo": -1,
+        "fuente": "falla genérica"
+      }
+    ]
+  },
+  {
+    "id": "miraval",
+    "nivel_real": "Bajo",
+    "tamano": "Chico",
+    "grilla": [
+      {
+        "id": 0,
+        "texto": "Te preguntó qué empleadores hay realmente en la localidad",
+        "signo": 1,
+        "fuente": "pide contexto"
+      },
+      {
+        "id": 1,
+        "texto": "Te propuso crear un Centro Universitario Municipal con conectividad y salas de videoconferencia",
+        "signo": -1,
+        "fuente": "P37 Avanzado + escala"
+      },
+      {
+        "id": 2,
+        "texto": "Te preguntó si hay escuela técnica o solo secundaria orientada",
+        "signo": 1,
+        "fuente": "P36 — son dos poblaciones distintas"
+      },
+      {
+        "id": 3,
+        "texto": "Te propuso institucionalizar por ordenanza una agencia de desarrollo y montar un observatorio local que actualice la demanda",
+        "signo": -1,
+        "fuente": "P32 Avanzado"
+      },
+      {
+        "id": 4,
+        "texto": "Te propuso sentar por primera vez en una misma mesa a educación, al área productiva del municipio y a dos o tres empleadores",
+        "signo": 1,
+        "fuente": "P32 Bajo"
+      },
+      {
+        "id": 5,
+        "texto": "Te propuso medir la inserción laboral a 6 y 12 meses",
+        "signo": -1,
+        "fuente": "P32 Avanzado"
+      },
+      {
+        "id": 6,
+        "texto": "Te propuso ofrecer las propias dependencias del municipio como primer ámbito de práctica",
+        "signo": 1,
+        "fuente": "P36 Bajo + ajuste chica"
+      },
+      {
+        "id": 7,
+        "texto": "Te propuso convenios marco con varias empresas y cobertura de varias escuelas técnicas",
+        "signo": -1,
+        "fuente": "P36 Avanzado + escala"
+      },
+      {
+        "id": 8,
+        "texto": "Te propuso arrancar por una sola cosa —una jornada de orientación vocacional, por ejemplo— y no por las tres temáticas juntas",
+        "signo": 1,
+        "fuente": "P31 Bajo + ajuste chica"
+      },
+      {
+        "id": 9,
+        "texto": "Te dio el plan completo sin haberte preguntado nada antes",
+        "signo": -1,
+        "fuente": "falla genérica"
+      },
+      {
+        "id": 10,
+        "texto": "Te propuso relevar cuántos egresados siguen estudiando o trabajando, aunque sea a mano, para tener una línea de base",
+        "signo": 1,
+        "fuente": "P37 Bajo"
+      },
+      {
+        "id": 11,
+        "texto": "Te nombró un programa nacional o provincial y no supiste si sigue vigente",
+        "signo": -1,
+        "fuente": "alucinación"
+      },
+      {
+        "id": 12,
+        "texto": "Te dijo que ninguna práctica va sin convenio, seguro/ART y tutor",
+        "signo": 1,
+        "fuente": "innegociable P36"
+      },
+      {
+        "id": 13,
+        "texto": "Te respondió algo que le hubiera servido igual a cualquier municipio del país",
+        "signo": -1,
+        "fuente": "falla genérica"
+      }
+    ]
+  },
+  {
+    "id": "alamos",
+    "nivel_real": "Intermedio",
+    "tamano": "Mediano",
+    "grilla": [
+      {
+        "id": 0,
+        "texto": "Te preguntó si las prácticas en la bodega tienen convenio escrito, seguro/ART y tutor",
+        "signo": 1,
+        "fuente": "innegociable P36"
+      },
+      {
+        "id": 1,
+        "texto": "Te propuso designar un punto de contacto entre educación y desarrollo económico y convocar una primera mesa",
+        "signo": -1,
+        "fuente": "P32 Bajo"
+      },
+      {
+        "id": 2,
+        "texto": "Te preguntó si el segundo convenio con la universidad tiene estudiantes cursando de verdad",
+        "signo": 1,
+        "fuente": "P37 Intermedio — convenios fantasma"
+      },
+      {
+        "id": 3,
+        "texto": "Te propuso ofrecer las dependencias municipales como primer ámbito de práctica",
+        "signo": -1,
+        "fuente": "P36 Bajo"
+      },
+      {
+        "id": 4,
+        "texto": "Te dijo que la oferta de cursos hay que rearmarla a partir de lo que piden las empresas, y te propuso cómo relevarlo",
+        "signo": 1,
+        "fuente": "P32 Intermedio"
+      },
+      {
+        "id": 5,
+        "texto": "Te propuso montar un observatorio local que actualice la demanda y realimente la oferta",
+        "signo": -1,
+        "fuente": "P32 Avanzado"
+      },
+      {
+        "id": 6,
+        "texto": "Te propuso pasar de la Expo anual a algo que siga el resto del año: tutorías, becas con criterios transparentes, convenios operativos",
+        "signo": 1,
+        "fuente": "P37 Intermedio"
+      },
+      {
+        "id": 7,
+        "texto": "Te propuso medir inserción laboral a 6 y 12 meses con foco en quienes están más lejos del empleo",
+        "signo": -1,
+        "fuente": "P32 Avanzado"
+      },
+      {
+        "id": 8,
+        "texto": "Te propuso ampliar a las otras cuatro secundarias y no quedarte solo con la técnica",
+        "signo": 1,
+        "fuente": "P36 Intermedio"
+      },
+      {
+        "id": 9,
+        "texto": "Te felicitó por la Expo y los convenios sin marcarte ninguna debilidad",
+        "signo": -1,
+        "fuente": "complacencia"
+      },
+      {
+        "id": 10,
+        "texto": "Te marcó que depender del vínculo personal con el dueño de la bodega es un riesgo",
+        "signo": 1,
+        "fuente": "señal de «sí débil»"
+      },
+      {
+        "id": 11,
+        "texto": "Te propuso que el municipio se haga cargo de conseguirle el lugar de práctica a todos los chicos de la técnica",
+        "signo": -1,
+        "fuente": "el municipio articula, no sustituye"
+      },
+      {
+        "id": 12,
+        "texto": "Te propuso armar un registro simple de estudiantes y empresas participantes",
+        "signo": 1,
+        "fuente": "P36 Intermedio"
+      },
+      {
+        "id": 13,
+        "texto": "Te dio el plan completo sin haberte preguntado nada antes",
+        "signo": -1,
+        "fuente": "falla genérica"
+      }
+    ]
+  },
+  {
+    "id": "totoral",
+    "nivel_real": "Avanzado",
+    "tamano": "Grande",
+    "grilla": [
+      {
+        "id": 0,
+        "texto": "Te preguntó qué hacés hoy con la información del relevamiento a las 40 empresas",
+        "signo": 1,
+        "fuente": "pide contexto"
+      },
+      {
+        "id": 1,
+        "texto": "Te propuso convocar una primera mesa con educación, desarrollo económico y el sector privado",
+        "signo": -1,
+        "fuente": "P32 Bajo"
+      },
+      {
+        "id": 2,
+        "texto": "Te preguntó si medís qué pasa con los egresados de los cursos después de terminar",
+        "signo": 1,
+        "fuente": "tu gap real"
+      },
+      {
+        "id": 3,
+        "texto": "Te propuso relevar qué perfiles piden las empresas",
+        "signo": -1,
+        "fuente": "ya lo hacés"
+      },
+      {
+        "id": 4,
+        "texto": "Te propuso medir inserción y continuidad a 6 y 12 meses, con foco en quienes están más lejos del empleo",
+        "signo": 1,
+        "fuente": "P32 Avanzado"
+      },
+      {
+        "id": 5,
+        "texto": "Te propuso ofrecer las dependencias municipales como ámbito de práctica",
+        "signo": -1,
+        "fuente": "P36 Bajo"
+      },
+      {
+        "id": 6,
+        "texto": "Te propuso una matriz de indicadores de retención de talento y arraigo local",
+        "signo": 1,
+        "fuente": "P37 Avanzado"
+      },
+      {
+        "id": 7,
+        "texto": "Te propuso armar un registro de estudiantes y empresas participantes",
+        "signo": -1,
+        "fuente": "P36 Intermedio — ya lo tenés"
+      },
+      {
+        "id": 8,
+        "texto": "Te propuso institucionalizar la mesa por ordenanza para que sobreviva al cambio de gestión",
+        "signo": 1,
+        "fuente": "P32 Avanzado"
+      },
+      {
+        "id": 9,
+        "texto": "Te explicó qué son las prácticas profesionalizantes",
+        "signo": -1,
+        "fuente": "nivel de la respuesta"
+      },
+      {
+        "id": 10,
+        "texto": "Te propuso compartir el modelo con municipios vecinos o presentarlo en la Red",
+        "signo": 1,
+        "fuente": "ciudad faro"
+      },
+      {
+        "id": 11,
+        "texto": "Te dio el plan completo sin haberte preguntado nada antes",
+        "signo": -1,
+        "fuente": "falla genérica"
+      },
+      {
+        "id": 12,
+        "texto": "Te dijo qué parte no puede resolver el municipio, o qué dato no tiene",
+        "signo": 1,
+        "fuente": "honestidad"
+      },
+      {
+        "id": 13,
+        "texto": "Te respondió algo que le hubiera servido igual a cualquier municipio del país",
+        "signo": -1,
+        "fuente": "falla genérica"
+      }
+    ]
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "sarandi",
+    "municipio": "Villa Sarandí",
+    "provincia": "Buenos Aires",
+    "poblacion_habitantes": 185000,
+    "problema": "Ausentismo y abandono",
+    "rol_usuario": "Subsecretario/a de Educación",
+    "linea_entrada": "Tengo un problema de ausentismo y abandono en las secundarias y no sé por dónde agarrarlo.",
+    "situacion": "Tenés 42 escuelas de gestión estatal en la ciudad. Te enterás de los chicos que dejan de ir cuando un director te llama, y para ese momento el chico ya se fue. No hay visitas programadas a las escuelas: vas cuando hay un problema, y de esa visita no queda registro más que lo que se acuerde el que fue. Educación no cruza información con niñez, salud ni desarrollo social: cada área tiene su planilla y su criterio. Los únicos datos que tenés son los que manda el Ministerio provincial, con más de un año de atraso. No hay ningún programa de tutorías ni acompañamiento: cada escuela se arregla como puede. Sospechás que en tres o cuatro barrios el problema es mucho peor, pero no lo podés demostrar."
+  },
+  {
+    "id": "arroyo",
+    "municipio": "Colonia El Arroyo",
+    "provincia": "Córdoba",
+    "poblacion_habitantes": 9000,
+    "problema": "Ausentismo y abandono",
+    "rol_usuario": "Coordinador/a de Educación, con un equipo de dos personas",
+    "linea_entrada": "Tengo un problema de ausentismo y abandono en las secundarias y no sé por dónde agarrarlo.",
+    "situacion": "Hay dos primarias, una secundaria y dos escuelas rurales. Visitás las escuelas seguido y anotás en un cuaderno; cuando alguien pregunta por algo de hace seis meses, hay que buscarlo a mano. Con salud y desarrollo social se hablan cuando explota un caso puntual: funciona porque se conocen todos, pero no hay circuito ni ficha común. El año pasado armaste un acuerdo con la parroquia para acompañar a 15 chicos que venían faltando mucho; anda bien, pero nadie registró si volvieron a clase. Las escuelas tienen sus listas de asistencia, pero nadie las procesa."
+  },
+  {
+    "id": "sanjusto",
+    "municipio": "San Justo del Salado",
+    "provincia": "Santa Fe",
+    "poblacion_habitantes": 55000,
+    "problema": "Ausentismo y abandono",
+    "rol_usuario": "Director/a de Educación, con un equipo de seis",
+    "linea_entrada": "Tengo un problema de ausentismo y abandono en las secundarias y no sé por dónde agarrarlo.",
+    "situacion": "Tenés cronograma anual de visitas: todas las escuelas al menos una vez por trimestre, con planilla digital estandarizada que completa todo el equipo igual. Hay una mesa intersectorial con niñez, salud y desarrollo social que se reúne todos los meses, con protocolo de derivación escrito. Tenés programa municipal de tutorías en todas las escuelas de gestión estatal, con foco en la transición primaria-secundaria, tutores formados y línea de base. El tablero de indicadores propios se actualiza dos veces al año. Lo que te preocupa: la mesa se está volviendo rutina, y los chicos que faltan siguen siendo más o menos los mismos."
+  },
+  {
+    "id": "nogoya",
+    "municipio": "Puerto Nogoyá",
+    "provincia": "Entre Ríos",
+    "poblacion_habitantes": 40000,
+    "problema": "Aprendizajes",
+    "rol_usuario": "Secretario/a de Desarrollo Humano — educación es una de tus cinco áreas",
+    "linea_entrada": "Los chicos de mi municipio están aprendiendo menos de lo que deberían y quiero hacer algo desde el municipio.",
+    "situacion": "No hay apoyo escolar municipal ni talleres en contraturno: hubo un taller de lectura hace dos años que se cortó cuando se fue la persona que lo daba. Los directores te dicen que los chicos de primaria «leen mal» y que en la secundaria arrastran matemática desde siempre. No tenés datos propios; sabés que existen las pruebas Aprender pero nunca las miraste desagregadas por tu ciudad. No hay referente pedagógico en el municipio. Formación docente: nada."
+  },
+  {
+    "id": "lules",
+    "municipio": "San Pedro de Lules",
+    "provincia": "Tucumán",
+    "poblacion_habitantes": 250000,
+    "problema": "Aprendizajes",
+    "rol_usuario": "Director/a de Programas Educativos",
+    "linea_entrada": "Los chicos de mi municipio están aprendiendo menos de lo que deberían y quiero hacer algo desde el municipio.",
+    "situacion": "Tenés apoyo escolar funcionando en las 6 escuelas municipales, dos días por semana, con 12 talleristas contratados. Anotás cuántos chicos se inscriben; nadie sabe cuántos terminan el año ni si mejoraron en algo. Cada tallerista arma su propio contenido, sin hablar con los docentes de aula. Las 60 escuelas provinciales de la ciudad quedaron afuera del programa. Todo se financia con un fondo que se renueva año a año. El año pasado hiciste dos capacitaciones docentes, para docentes de las municipales."
+  },
+  {
+    "id": "elvira",
+    "municipio": "Santa Elvira",
+    "provincia": "La Pampa",
+    "poblacion_habitantes": 7000,
+    "problema": "Aprendizajes",
+    "rol_usuario": "Coordinador/a de Educación — vos y una asistente",
+    "linea_entrada": "Los chicos de mi municipio están aprendiendo menos de lo que deberían y quiero hacer algo desde el municipio.",
+    "situacion": "Hay una primaria, una secundaria y una escuela rural. El aula de apoyo funciona en la biblioteca municipal cuatro tardes por semana desde hace cinco años, abierta a las tres escuelas, con foco en lectura en primaria y matemática en secundaria. Los dos talleristas se juntan una vez por mes con las maestras y deciden juntos a qué chicos priorizar. Tomás una prueba corta al inicio y al cierre del año y comparás los resultados. Con el ISFD de la ciudad vecina armaste un ciclo de formación de dos encuentros por año al que van los docentes de las tres escuelas. Está en el presupuesto municipal desde 2023."
+  },
+  {
+    "id": "miraval",
+    "municipio": "Coronel Miraval",
+    "provincia": "Chaco",
+    "poblacion_habitantes": 5000,
+    "problema": "Conexión con el mundo laboral",
+    "rol_usuario": "Encargado/a de Juventud y Empleo",
+    "linea_entrada": "Los chicos terminan la secundaria y no tienen ni idea de qué hacer, y las pocas empresas que hay dicen que no consiguen gente.",
+    "situacion": "Hay una secundaria orientada, sin escuela técnica. Los chicos terminan y se van a la ciudad cabecera, o se quedan sin hacer nada. No hay ningún contacto entre educación y el área de producción del municipio (que son dos personas). No hay convenios con empresas ni con universidades, no hay orientación vocacional, no hay prácticas de ningún tipo. Los empleadores de la zona son tres comercios grandes, una cooperativa agrícola y el propio municipio. El intendente te dijo: «hacé algo con los pibes que terminan la secundaria»."
+  },
+  {
+    "id": "alamos",
+    "municipio": "Los Álamos",
+    "provincia": "Mendoza",
+    "poblacion_habitantes": 60000,
+    "problema": "Conexión con el mundo laboral",
+    "rol_usuario": "Coordinador/a de Vinculación con el sector productivo",
+    "linea_entrada": "Los chicos terminan la secundaria y no tienen ni idea de qué hacer, y las pocas empresas que hay dicen que no consiguen gente.",
+    "situacion": "Hacés una Expo Carreras todos los años en el polideportivo y va mucha gente. Tenés dos convenios firmados con universidades: uno se usa, el otro nunca dictó una sola materia. Conseguiste que la bodega grande tome 6 chicos de la técnica para prácticas: lo arreglaste por teléfono con el dueño, que te conoce de toda la vida. No hay convenio escrito ni sabés si los chicos tienen seguro. La oferta de cursos del municipio —peluquería, gastronomía, computación— es la misma desde hace ocho años y nunca le preguntaste a ninguna empresa qué necesita. Con la escuela técnica te hablás seguido; con las otras cuatro secundarias, no."
+  },
+  {
+    "id": "totoral",
+    "municipio": "Villa del Totoral Norte",
+    "provincia": "Córdoba",
+    "poblacion_habitantes": 200000,
+    "problema": "Conexión con el mundo laboral",
+    "rol_usuario": "Director/a de Educación y Trabajo",
+    "linea_entrada": "Los chicos terminan la secundaria y no tienen ni idea de qué hacer, y las pocas empresas que hay dicen que no consiguen gente.",
+    "situacion": "Tenés una mesa de educación y trabajo que se reúne cada dos meses con la cámara de comercio, el sindicato metalúrgico, la escuela técnica, las cinco secundarias y el centro universitario municipal. Hacés un relevamiento anual de demanda de perfiles a 40 empresas y con eso rearmás la oferta de cursos. Tenés convenios marco con 12 empresas para prácticas profesionalizantes, todas con seguro y tutor. Hay becas de transporte con partida propia. Medís cuántos egresados siguen estudiando. Lo que no sabés es qué pasa con los chicos a los seis meses de terminar un curso."
+  }
+]
