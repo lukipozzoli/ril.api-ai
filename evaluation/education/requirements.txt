@@ -1,0 +1,2 @@
+arize-phoenix-client==3.5.0
+google-genai>=1.52.0,<3
