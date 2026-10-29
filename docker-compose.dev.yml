@@ -41,7 +41,7 @@ services:
       dockerfile: Dockerfile.dev
     ports:
       - "8090:8090"
-    command: go run ./cmd/sandbox/ web -port 8090 api webui -api_server_address http://localhost:8090/api
+    command: go run ./cmd/sandbox/ web -port 8090 -write-timeout 3m api webui -api_server_address http://localhost:8090/api
     volumes:
       - .:/app
       - ~/.config/gcloud:/root/.config/gcloud:ro

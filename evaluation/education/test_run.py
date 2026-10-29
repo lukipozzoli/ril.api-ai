@@ -65,7 +65,7 @@ class FakeJudgeModel:
             {'id': i, 'presente': i in (0, 1), 'ambiguo': self.ambiguous and i == 2,
              'evidencia': '¿Qué información tiene sobre el problema?' if i in (0, 1) else '',
              'explicacion': 'Evidencia de prueba.'}
-            for i in range(14)]}
+            for i in [item['id'] for item in payload['grilla']]]}
 
 
 class EvaluationTests(unittest.TestCase):
@@ -121,13 +121,67 @@ class EvaluationTests(unittest.TestCase):
             run.Simulator(ril, FakeModel(), store)(self.case)
         self.assertEqual(store.records[0]['turns'][0]['events'][0]['errorCode'], 'TOOL_ERROR')
 
-    def test_judge_score_uses_signs_and_fixed_denominator(self):
+    def test_judge_score_preserves_original_grid_results(self):
         output = run.Simulator(FakeRIL(), FakeModel(), MemoryStore(), exchanges=1)(self.case)
         result = run.Judge(FakeJudgeModel(), MemoryStore())(output, self.references['nogoya'])
         # Item 0 is +1 and item 1 is -1 in the original Nogoyá grid.
         self.assertEqual(result['puntaje_plan'], 0)
         self.assertTrue(result['acierto_nivel'])
         self.assertFalse(result['requiere_revision'])
+
+    def test_cases_accept_different_grid_lengths_and_sign_distributions(self):
+        references = copy.deepcopy(list(self.references.values()))
+        for index, reference in enumerate(references):
+            count = (1, 3, 20)[index % 3]
+            template = reference['grilla'][0]
+            reference['grilla'] = [dict(template, id=10 + position * 2,
+                signo=1 if index % 2 else -1) for position in range(count)]
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'evaluation.json'
+            path.write_text(json.dumps(references))
+            _, loaded = run.load_cases(run.HERE / 'cases/simulation.json', path)
+        self.assertEqual(loaded, {reference['id']: reference for reference in references})
+
+    def test_invalid_grids_are_rejected(self):
+        template = self.references['nogoya']['grilla'][0]
+        invalid_grids = [[], None,
+            [dict(template), dict(template)],
+            [dict(template, signo=0)], [dict(template, signo=True)],
+            [dict(template, id=True)], [dict(template, id='criterion')]]
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'evaluation.json'
+            for grid in invalid_grids:
+                with self.subTest(grid=grid):
+                    references = copy.deepcopy(list(self.references.values()))
+                    references[0]['grilla'] = grid
+                    path.write_text(json.dumps(references))
+                    with self.assertRaises(ValueError):
+                        run.load_cases(run.HERE / 'cases/simulation.json', path)
+
+    def test_judge_uses_each_cases_grid_for_scores(self):
+        output = run.Simulator(FakeRIL(), FakeModel(), MemoryStore(), exchanges=1)(self.case)
+        template = self.references['nogoya']['grilla'][0]
+        for signs, expected_score in [([1], 1), ([-1], -1),
+                ([1, 1, -1], 2 / 3), ([-1] * 20, -2 / 20)]:
+            with self.subTest(signs=signs):
+                reference = dict(self.references['nogoya'], grilla=[
+                    dict(template, id=index, signo=sign) for index, sign in enumerate(signs)])
+                result = run.Judge(FakeJudgeModel(), MemoryStore())(output, reference)
+                self.assertAlmostEqual(result['puntaje_plan'], expected_score)
+
+    def test_judge_requires_exact_criterion_ids_including_nonconsecutive_ids(self):
+        output = run.Simulator(FakeRIL(), FakeModel(), MemoryStore(), exchanges=1)(self.case)
+        template = self.references['nogoya']['grilla'][0]
+        reference = dict(self.references['nogoya'], grilla=[dict(template, id=i) for i in (10, 30, 90)])
+        run.Judge(FakeJudgeModel(), MemoryStore())(output, reference)
+        for returned_ids in [(10, 30), (10, 30, 30), (10, 30, 99), (10, 30, 90, 100)]:
+            with self.subTest(returned_ids=returned_ids):
+                model = FakeJudgeModel()
+                response = model.complete('', {'grilla': reference['grilla']})
+                response['items'] = [dict(response['items'][0], id=i) for i in returned_ids]
+                model.complete = lambda *args, **kwargs: response
+                with self.assertRaises(ValueError):
+                    run.Judge(model, MemoryStore())(output, reference)
 
     def test_ambiguous_grid_does_not_get_an_invented_score(self):
         output = run.Simulator(FakeRIL(), FakeModel(), MemoryStore(), exchanges=1)(self.case)
@@ -146,8 +200,73 @@ class EvaluationTests(unittest.TestCase):
             return result
 
         model.complete = invalid
-        with self.assertRaises(ValueError):
-            run.Judge(model, MemoryStore())(output, self.references['nogoya'])
+        store = MemoryStore()
+        result = run.Judge(model, store)(output, self.references['nogoya'])
+        self.assertIsNone(result['puntaje_plan'])
+        self.assertTrue(result['requiere_revision'])
+        self.assertTrue(result['items'][0]['ambiguo'])
+        self.assertEqual(result['items'][0]['evidencia'], 'Esto no fue dicho por el agente')
+        self.assertTrue(result['acierto_nivel'])
+        self.assertTrue(store.records[0]['errores_validacion'])
+
+    def test_invalid_level_evidence_does_not_invent_accuracy(self):
+        output = run.Simulator(FakeRIL(), FakeModel(), MemoryStore(), exchanges=1)(self.case)
+        model = FakeJudgeModel()
+        response = model.complete('', {'grilla': self.references['nogoya']['grilla']})
+        response['evidencia_nivel'] = 'Cita inventada'
+        model.complete = lambda *args, **kwargs: response
+        judge = run.Judge(model, MemoryStore())
+        evaluators = run.create_evaluators(judge)
+        metric = evaluators['acierto_nivel'](output, self.references['nogoya'])
+        self.assertNotIn('score', metric)
+        self.assertEqual(metric['label'], 'requiere_revision')
+
+    def test_both_metrics_share_judge_errors_without_repeating_model_calls(self):
+        calls = []
+
+        def failing_judge(output, expected):
+            calls.append(output['run_id'])
+            raise RuntimeError('Model unavailable')
+
+        evaluators = run.create_evaluators(failing_judge)
+        for evaluate in evaluators.values():
+            with self.assertRaisesRegex(RuntimeError, 'Model unavailable'):
+                evaluate({'status': 'completed', 'run_id': 'same-run'}, {})
+        self.assertEqual(calls, ['same-run'])
+
+    def test_model_retries_transport_errors_with_bounded_backoff(self):
+        import httpx
+        from unittest.mock import Mock
+        for failure in (httpx.RemoteProtocolError('disconnected'), httpx.ReadTimeout('timeout')):
+            with self.subTest(failure=failure):
+                model = run.GeminiModel.__new__(run.GeminiModel)
+                model.model = 'test'
+                model.types = SimpleNamespace(GenerateContentConfig=lambda **kwargs: kwargs)
+                generate = Mock(side_effect=[failure, SimpleNamespace(text='Respuesta')])
+                model.client = SimpleNamespace(models=SimpleNamespace(generate_content=generate))
+                with patch.object(run.time, 'sleep') as sleep:
+                    self.assertEqual(model.complete('system', {}), 'Respuesta')
+                self.assertEqual(generate.call_count, 2)
+                sleep.assert_called_once_with(1)
+                generate.side_effect = failure
+                generate.reset_mock()
+                with patch.object(run.time, 'sleep'), self.assertRaises(type(failure)):
+                    model.complete('system', {})
+                self.assertEqual(generate.call_count, 3)
+
+    def test_reevaluation_uses_original_experiment_without_running_tasks(self):
+        from unittest.mock import Mock
+        original = {'experiment_id': 'experiment', 'task_runs': []}
+        experiments = SimpleNamespace(
+            get_experiment=Mock(return_value=original),
+            evaluate_experiment=Mock(return_value=original))
+        client = SimpleNamespace(experiments=experiments)
+        self.assertIs(run.reevaluate_experiment(client, 'experiment', FakeJudgeModel()), original)
+        experiments.get_experiment.assert_called_once_with(experiment_id='experiment')
+        kwargs = experiments.evaluate_experiment.call_args.kwargs
+        self.assertIs(kwargs['experiment'], original)
+        self.assertEqual(kwargs['retries'], 0)
+        self.assertEqual(set(kwargs['evaluators']), {'acierto_nivel', 'puntaje_plan'})
 
     def test_phoenix_runs_repetitions_with_input_and_reference_separated(self):
         class Datasets:
@@ -201,6 +320,32 @@ class EvaluationTests(unittest.TestCase):
         simulator = run.Simulator(FakeRIL(), FakeModel(), MemoryStore(), exchanges=1)
         with self.assertRaises(RuntimeError):
             run.run_phoenix(client, [self.case], self.references, simulator, None, 1, 'x', 'y')
+
+    def test_phoenix_failed_tasks_are_not_scored_or_sent_to_judge(self):
+        class Experiments:
+            def run_experiment(self, *, evaluators, **kwargs):
+                return [evaluate(output=output, expected={})
+                    for output in (None, {'status': 'failed', 'run_id': 'failed-run'})
+                    for evaluate in evaluators.values()]
+
+        client = SimpleNamespace(
+            datasets=SimpleNamespace(list=lambda: [], create_dataset=lambda **kwargs: kwargs),
+            experiments=Experiments())
+        judge_model = FakeJudgeModel()
+        judge_store = MemoryStore()
+        simulator = run.Simulator(FakeRIL(), FakeModel(), MemoryStore(), exchanges=1)
+        results = run.run_phoenix(client, [self.case], self.references, simulator,
+            run.Judge(judge_model, judge_store), 1, 'test', 'education')
+        self.assertEqual(len(results), 4)
+        for result in results:
+            self.assertEqual(result['label'], 'no_evaluable')
+            self.assertNotIn('score', result)
+        self.assertEqual(judge_model.calls, 0)
+        self.assertEqual(judge_store.records, [])
+
+    def test_judge_rejects_missing_output_with_clear_error(self):
+        with self.assertRaisesRegex(ValueError, 'simulación fallida'):
+            run.Judge(FakeJudgeModel(), MemoryStore())(None, self.references['nogoya'])
 
     def test_jsonl_backup_is_parseable_and_keeps_each_record(self):
         with tempfile.TemporaryDirectory() as directory:

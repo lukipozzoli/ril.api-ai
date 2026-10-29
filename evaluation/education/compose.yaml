@@ -10,20 +10,5 @@ services:
     volumes:
       - phoenix-data:/data
     restart: unless-stopped
-  simulator:
-    profiles: [evaluation]
-    build: .
-    env_file: .env
-    environment:
-      PHOENIX_ENDPOINT: http://phoenix:6006
-      RIL_API_URL: ${RIL_API_URL:-http://host.docker.internal:8090/api}
-      GOOGLE_APPLICATION_CREDENTIALS: /gcloud/application_default_credentials.json
-    extra_hosts:
-      - host.docker.internal:host-gateway
-    volumes:
-      - ${GCLOUD_CONFIG_DIR:-~/.config/gcloud}:/gcloud:ro
-      - ./results:/evaluation/results
-    depends_on:
-      - phoenix
 volumes:
   phoenix-data:

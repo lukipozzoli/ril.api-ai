@@ -1,0 +1,4 @@
+# Override para reutilizar el sandbox existente con respuestas de hasta tres minutos.
+services:
+  sandbox:
+    command: go run ./cmd/sandbox/ web -port 8090 -write-timeout 3m api webui -api_server_address http://localhost:8090/api
